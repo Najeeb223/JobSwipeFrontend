@@ -1,5 +1,5 @@
 /**
- * App tsx updated
+ * Included screens folder
  * @format
  */
 
