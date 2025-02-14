@@ -34,8 +34,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#313CA1',
     },
     logo: {
-        width: 800,  // Increased width
-        height: 800, // Increased height
+        width: 500,  // Increased width
+        height: 500, // Increased height
         resizeMode: 'contain',
     },
 });
