@@ -15,13 +15,13 @@ const SplashScreen = () => {
 
     useEffect(() => {
         setTimeout(() => {
-            navigation.replace('Login'); // Navigate to Login Screen
+            navigation.replace('Login');
         }, 3000);
     }, [navigation]);
 
     return (
         <View style={styles.container}>
-            <Image source={require('../assets/JobSwipe Logo.png')} style={styles.logo} />
+            <Image source={require('../assets/images/JobSwipe_Logo.png')} style={styles.logo} />
         </View>
     );
 };
