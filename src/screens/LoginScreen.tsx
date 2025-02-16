@@ -1,7 +1,10 @@
 import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native'; // Import navigation hook
 
 const LoginScreen = () => {
+  const navigation = useNavigation(); // Initialize navigation
+
   return (
     <View style={styles.container}>
       {/* Logo */}
@@ -29,7 +32,7 @@ const LoginScreen = () => {
       </TouchableOpacity>
 
       {/* Sign Up Button */}
-      <TouchableOpacity style={styles.signUpButton}>
+      <TouchableOpacity style={styles.signUpButton} onPress={() => navigation.navigate('SignupScreen')}>
         <Text style={styles.signUpButtonText}>Sign Up</Text>
       </TouchableOpacity>
     </View>
@@ -45,7 +48,7 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   logo: {
-    width: 480, // Increased size
+    width: 180, // Adjusted size
     height: 180,
     marginBottom: 50,
     resizeMode: 'contain',
@@ -62,7 +65,9 @@ const styles = StyleSheet.create({
   loginButton: {
     width: '100%',
     height: 50,
-    backgroundColor: '#E45F2F', // Chic orange login button
+    backgroundColor: '#313CA1', // Rich blue button
+    borderWidth: 1, // Added border
+    borderColor: '#FFF', // White border
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 25,
@@ -77,7 +82,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 50,
     borderWidth: 1,
-    borderColor: '#FFF', // White border for Sign Up button
+    borderColor: '#FFF', // White border for Sign-Up button
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 25,
