@@ -45,9 +45,9 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   logo: {
-    width: 120,
-    height: 120,
-    marginBottom: 40,
+    width: 480, // Increased size
+    height: 180,
+    marginBottom: 50,
     resizeMode: 'contain',
   },
   input: {
