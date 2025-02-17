@@ -12,7 +12,7 @@ type StackParamList = {
 type NavigationProp = StackNavigationProp<StackParamList, 'Login'>;
 
 const LoginScreen = () => {
-  const navigation = useNavigation<NavigationProp>(); // Use typed navigation
+  const navigation = useNavigation<NavigationProp>();
 
   return (
     <View style={styles.container}>
