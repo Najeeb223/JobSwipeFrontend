@@ -1,9 +1,18 @@
 import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet } from 'react-native';
-import { useNavigation } from '@react-navigation/native'; // Import navigation hook
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+
+// Define the navigation types
+type StackParamList = {
+  Login: undefined;
+  SignupScreen: undefined;
+};
+
+type NavigationProp = StackNavigationProp<StackParamList, 'Login'>;
 
 const LoginScreen = () => {
-  const navigation = useNavigation(); // Initialize navigation
+  const navigation = useNavigation<NavigationProp>(); // Use typed navigation
 
   return (
     <View style={styles.container}>
@@ -48,7 +57,7 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   logo: {
-    width: 180, // Adjusted size
+    width: 180,
     height: 180,
     marginBottom: 50,
     resizeMode: 'contain',
@@ -56,7 +65,7 @@ const styles = StyleSheet.create({
   input: {
     width: '100%',
     height: 50,
-    backgroundColor: '#E0E0E0', // Light grey input field
+    backgroundColor: '#E0E0E0',
     borderRadius: 25,
     paddingHorizontal: 15,
     marginBottom: 15,
@@ -65,9 +74,9 @@ const styles = StyleSheet.create({
   loginButton: {
     width: '100%',
     height: 50,
-    backgroundColor: '#313CA1', // Rich blue button
-    borderWidth: 1, // Added border
-    borderColor: '#FFF', // White border
+    backgroundColor: '#313CA1',
+    borderWidth: 1,
+    borderColor: '#FFF',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 25,
@@ -82,7 +91,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 50,
     borderWidth: 1,
-    borderColor: '#FFF', // White border for Sign-Up button
+    borderColor: '#FFF',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 25,
