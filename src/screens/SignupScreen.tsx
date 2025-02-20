@@ -3,9 +3,9 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, FlatLi
 import DocumentPicker from 'react-native-document-picker';
 
 const SignupScreen = () => {
-  const [firstName, setFirstName] = useState('');
+  const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
-  const [email, setEmail] = useState('');
+  const [jobSeekerEmail, setJobSeekerEmail] = useState('');
   const [password, setPassword] = useState('');
   const [industry, setIndustry] = useState('');
   const [location, setLocation] = useState('');
@@ -42,25 +42,26 @@ const SignupScreen = () => {
   };
 
   const handleSignup = async () => {
-    if (!firstName || !surname || !email || !password || !industry || !location) {
+    if (!name || !surname || !jobSeekerEmail || !password || !industry || !location) {
       Alert.alert('Error', 'Please fill all fields.');
       return;
     }
 
     const userData = {
-      firstName,
+      name,
       surname,
-      email,
+      jobSeekerEmail,
       password,
       industry,
       location,
       skills,
-      cvFile,
-      coverLetterFile,
+      cv: cvFile,
+      coverLetter: coverLetterFile,
+      createdAt: new Date().toISOString(), // Ensure it's correctly formatted
     };
 
     try {
-      const response = await fetch('http://10.0.2.2:8080/JobSwipeMobile/jobSeeker', {
+      const response = await fetch('http://10.0.2.2:8080/JobSwipeMobile/jobSeeker/create', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(userData),
@@ -81,9 +82,9 @@ const SignupScreen = () => {
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.heading}>Please enter the following</Text>
 
-      <TextInput style={styles.input} placeholder="First Name" value={firstName} onChangeText={setFirstName} />
+      <TextInput style={styles.input} placeholder="Name" value={name} onChangeText={setName} />
       <TextInput style={styles.input} placeholder="Surname" value={surname} onChangeText={setSurname} />
-      <TextInput style={styles.input} placeholder="Email" keyboardType="email-address" value={email} onChangeText={setEmail} />
+      <TextInput style={styles.input} placeholder="Email" keyboardType="email-address" value={jobSeekerEmail} onChangeText={setJobSeekerEmail} />
       <TextInput style={styles.input} placeholder="Password" secureTextEntry value={password} onChangeText={setPassword} />
       <TextInput style={styles.input} placeholder="Industry" value={industry} onChangeText={setIndustry} />
       <TextInput style={styles.input} placeholder="Location" value={location} onChangeText={setLocation} />
