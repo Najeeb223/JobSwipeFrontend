@@ -57,7 +57,6 @@ const SignupScreen = () => {
       skills,
       cv: cvFile,
       coverLetter: coverLetterFile,
-      createdAt: new Date().toISOString(), // Ensure it's correctly formatted
     };
 
     try {
