@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, FlatList, Alert } from 'react-native';
 import DocumentPicker from 'react-native-document-picker';
+import RNFS from 'react-native-fs';
+
+// Convert file to Base64
+const convertToBase64 = async (uri: string): Promise<string> => {
+  return await RNFS.readFile(uri, 'base64');
+};
+
 
 const SignupScreen = () => {
   const [name, setName] = useState('');
@@ -25,13 +32,14 @@ const SignupScreen = () => {
     setSkills(skills.filter((_, i) => i !== index));
   };
 
-  // File picker without Base64 conversion
+  // File picker with Base64 conversion
   const handleFileUpload = async (setFile: (file: string | null) => void) => {
     try {
       const res = await DocumentPicker.pickSingle({
         type: [DocumentPicker.types.pdf, DocumentPicker.types.doc, DocumentPicker.types.docx],
       });
-      setFile(res.uri);  // Store the file URI instead of converting to Base64
+      const base64File = await convertToBase64(res.uri);  // Convert to Base64
+      setFile(base64File);  // Store the Base64 string instead of URI
     } catch (err) {
       if (DocumentPicker.isCancel(err)) {
         console.log('User canceled file picker');
