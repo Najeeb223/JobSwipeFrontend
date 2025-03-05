@@ -4,6 +4,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import SplashScreen from './src/screens/SplashScreen';
 import LoginScreen from './src/screens/LoginScreen';
 import SignupScreen from './src/screens/SignupScreen'; // ✅ Import SignupScreen
+import OnBoardingScreen from 'screens/OnBoardingScreen';
+import HomeScreen from 'screens/HomeScreen';
 
 const Stack = createStackNavigator();
 
@@ -14,6 +16,8 @@ function App(): React.JSX.Element {
         <Stack.Screen name="Splash" component={SplashScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="SignupScreen" component={SignupScreen} />
+        <Stack.Screen name="OnBoardingScreen" component={OnBoardingScreen} />
+        <Stack.Screen name="HomeScreen" component={HomeScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
