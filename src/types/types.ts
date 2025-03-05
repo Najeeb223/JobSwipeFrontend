@@ -1,5 +1,5 @@
 export type RootStackParamList = {
+    SignupScreen: undefined;
     OnboardingScreen: undefined;
     HomeScreen: undefined;
-    // Add other screens here if needed
-  };  
+  };

@@ -68,15 +68,15 @@ const OnBoardingScreen = ({ navigation }: Props) => {
 
   return (
     <View style={styles.container}>
-      <Carousel
+     <Carousel
         ref={carouselRef}
         data={slides}
         renderItem={renderItem}
         sliderWidth={width}
         itemWidth={width}
-        onSnapToItem={index => setActiveSlide(index)}
+        onSnapToItem={(index: number) => setActiveSlide(index)} // Explicitly typing index as number
         firstItem={activeSlide}
-      />
+    />
     </View>
   );
 };
