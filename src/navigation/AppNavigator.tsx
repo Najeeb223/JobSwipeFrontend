@@ -4,8 +4,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import LoginScreen from '../screens/LoginScreen';
 import SignupScreen from '../screens/SignupScreen'; // Ensure this import is correct
 import SplashScreen from '../screens/SplashScreen';
-import OnBoardingScreen from 'screens/OnBoardingScreen';
-import HomeScreen from 'screens/HomeScreen';
+import OnBoardingScreen from '../screens/OnBoardingScreen';
+import HomeScreen from '../screens/HomeScreen';
 const Stack = createStackNavigator();
 
 export default function AppNavigator() {
