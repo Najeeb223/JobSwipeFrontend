@@ -21,21 +21,21 @@ const { width, height } = Dimensions.get('window');
 const slides = [
   {
     id: '1',
-    animation: require('../src/animations/firstCarousel.json'),
+    animation: require('../assets/animations/firstCarousel.json'),
     heading: 'Your Career, Your Choice',
     subtext: 'Discover your dream job with a simple swipe. JobMatch transforms job hunting from a chore into an exciting journey of possibilities.',
     showSkip: true,
   },
   {
     id: '2',
-    animation: require('../src/animations/secondCarousel.json'),
+    animation: require('../assets/animations/secondCarousel.json'),
     heading: 'Swipe Your Way to Success',
     subtext: 'Right to apply, left to pass. It\'s that simple. No more endless scrolling or complicated applications. Your perfect job is just a swipe away.',
     showSkip: true,
   },
   {
     id: '3',
-    animation: require('../src/animations/thirdCarousel.json'),
+    animation: require('../assets/animations/thirdCarousel.json'),
     heading: 'Find Your Perfect Career Match',
     subtext: 'JobMatch: Your Career Matchmaker. We cut through the noise and connect you with opportunities that truly matter.',
     showSkip: false,
