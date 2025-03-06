@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, FlatList, Alert } from 'react-native';
 import DocumentPicker from 'react-native-document-picker';
 import RNFS from 'react-native-fs';
+import { StackNavigationProp } from '@react-navigation/stack';
+
+
+
+
 
 // Convert file to Base64
 const convertToBase64 = async (uri: string): Promise<string> => {
@@ -10,6 +16,12 @@ const convertToBase64 = async (uri: string): Promise<string> => {
 
 
 const SignupScreen = () => {
+  type RootStackParamList = {
+    OnBoardingScreen: undefined;
+  };
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
+
+ // const navigation = useNavigation();
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
   const [jobSeekerEmail, setJobSeekerEmail] = useState('');
@@ -75,7 +87,8 @@ const SignupScreen = () => {
       });
 
       if (response.ok) {
-        Alert.alert('Success', 'Account created successfully!');
+        Alert.alert('Success', 'Account created successfully!', [
+          { text: 'OK', onPress: () => navigation.navigate('OnBoardingScreen') }]);
       } else {
         Alert.alert('Error', 'Signup failed.');
       }
