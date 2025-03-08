@@ -21,7 +21,7 @@ const SplashScreen = () => {
 
     return (
         <View style={styles.container}>
-            <Image source={require('../assets/images/JobSwipe_Logo.png')} style={styles.logo} />
+            <Image source={require('../assets/images/JobSwipeLogo.png')} style={styles.logo} />
         </View>
     );
 };

@@ -17,7 +17,7 @@ const LoginScreen = () => {
   return (
     <View style={styles.container}>
       {/* Logo */}
-      <Image source={require('../assets/images/JobSwipe_Logo.png')} style={styles.logo} />
+      <Image source={require('../assets/images/JobSwipeLogo.png')} style={styles.logo} />
 
       {/* Email Input */}
       <TextInput
