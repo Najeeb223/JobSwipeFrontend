@@ -1,9 +1,14 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json",
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": ".", // Changed from "app"
     "paths": {
-      "*": ["src/*"]
-    }
-  }
+      "*": ["src/*"] // Standard React Native convention
+    },
+    "target": "ES2020", // Update from ES5
+    "lib": ["ESNext"],
+    "moduleResolution": "bundler", // Changed from "node"
+    "jsx": "react-native",
+    "allowSyntheticDefaultImports": true
+  },
+  "exclude": ["node_modules"]
 }
