@@ -22,7 +22,7 @@
     "babel-jest": "^29.x.x",
     "jest": "^29.x.x",
     "metro-react-native-babel-preset": "^0.x.x",
-    "typescript": "^5.2.2"
+    "typescript": "^5.8.2"
   },
   "private": true
 }
